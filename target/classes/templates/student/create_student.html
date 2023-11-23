@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Student</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+	<nav class="bg-gray-800 flex items-center h-16">
+    <a href="/students" class="text-white text-2xl font-bold ml-8">Student Management System</a>
+  </nav>
+
+	<div class="max-w-xl mx-auto mt-20">
+
+		<h1 class="font-thin text-2xl tracking-wider">Create New Student </h1>
+		
+		<div>
+
+			<form th:action="@{/students}" th:object = "${student}" method="POST">
+					<div class="items-center justify-center h-14  my-6">
+						<label class="block text-gray-600 text-sm font-normal"> First Name </label>
+						<input
+							type = "text"
+							name = "firstName"
+							th:field = "*{firstName}"
+							class="h-10 w-96 border mt-2 p-2"
+						/>
+					</div>
+						
+					<div class="items-center justify-center h-14  my-6">
+						<label class="block text-gray-600 text-sm font-normal"> Last Name </label>
+						<input
+							type = "text"
+							name = "lastName"
+							th:field = "*{lastName}"
+							class="h-10 w-96 border mt-2 p-2"
+						/>
+					</div>
+						
+					<div class="items-center justify-center h-14  my-6">
+						<label class="block text-gray-600 text-sm font-normal"> Email Address </label>
+						<input
+							type = "text"
+							name = "email"
+							th:field = "*{email}"
+							class="h-10 w-96 border mt-2 p-2"
+						/>
+					</div>
+						
+					<div>
+						<button type="submit" class="rounded text-white font-semibold bg-green-600 py-2 px-6 hover:bg-green-800 active:opacity-70">
+							Submit
+						</button>
+					</div>
+
+			</form>
+				
+		</div>
+
+	</div>
+
+</body>
+</html>

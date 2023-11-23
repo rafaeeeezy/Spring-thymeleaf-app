@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+  <nav class="bg-gray-800 flex justify-between items-center h-16">
+		<div>
+			<a href="#" class="text-white text-2xl font-bold ml-8">Student Management System</a>
+    	<a class="text-white font-bold ml-12"> View Students</a>
+		</div>
+    
+
+		<div th:if="${user}" class="flex flex-row text-white font-bold space-x-5 mr-5">
+			<h5>Logged in as: <span th:text="${user.email}"></span></h5>
+			<a th:href ="@{/logout}">Logout</a>
+		</div>
+
+  </nav>
+
+	<div>
+		
+		<table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+
+			<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+				<tr>
+					<th class="px-6 py-3"> First Name</th>
+					<th class="px-6 py-3"> Last Name</th>
+					<th class="px-6 py-3"> Email Address </th>
+				</tr>
+			</thead>
+			
+			<tbody>
+
+				<tr th:each = "student: ${students}" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<td th:text = "${student.firstName}" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"></td>
+					<td th:text = "${student.lastName}" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"></td>
+					<td th:text = "${student.email}" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"></td>
+				</tr>
+
+			</tbody>
+		
+		</table>
+		
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+  <meta charset="ISO-8859-1">
+  <title>Student Management System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a8a","950":"#172554"}
+          }
+        },
+        fontFamily: {
+          'body': [
+        'Roboto', 
+        'ui-sans-serif', 
+        'system-ui', 
+        '-apple-system', 
+        'system-ui', 
+        'Segoe UI', 
+        'Roboto', 
+        'Helvetica Neue', 
+        'Arial', 
+        'Noto Sans', 
+        'sans-serif', 
+        'Apple Color Emoji', 
+        'Segoe UI Emoji', 
+        'Segoe UI Symbol', 
+        'Noto Color Emoji'
+      ],
+          'sans': [
+        'Roboto', 
+        'ui-sans-serif', 
+        'system-ui', 
+        '-apple-system', 
+        'system-ui', 
+        'Segoe UI', 
+        'Roboto', 
+        'Helvetica Neue', 
+        'Arial', 
+        'Noto Sans', 
+        'sans-serif', 
+        'Apple Color Emoji', 
+        'Segoe UI Emoji', 
+        'Segoe UI Symbol', 
+        'Noto Color Emoji'
+      ]
+        }
+      }
+    }
+  </script>
+  </head>
+
+  <body class="bg-gray-50 dark:bg-gray-900">
+
+    <div class="flex items-center justify-center w-screen h-screen bg-gradient-to-r from-cyan-500 to-white
+    ">
+
+      <div class="px-40 py-20 bg-white rounded-md shadow-xl">
+
+        <div class="flex flex-col items-center">
+
+          <h1 class="font-bold text-cyan-500 text-9xl">404</h1>
+
+          <h6 class="mb-2 text-2xl font-bold text-center text-gray-800 md:text-3xl">Oops! Page not found</h6>
+
+          <p class="mb-8 text-center text-gray-500 md:text-lg">
+            The page you're looking for doesn't exist.
+          </p>
+
+          <a th:href ="@{/login}" class="px-6 py-2 text-sm font-semibold text-cyan-800 bg-blue-100">
+            Return to home
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+</html>
